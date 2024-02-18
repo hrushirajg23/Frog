@@ -4,34 +4,35 @@
 template<class T>
 struct TreeNode
 {
-    int data;
+    T data;
     struct TreeNode<T> *left;
     struct TreeNode<T> *right;
 };
 
+template<class T>
 class BinaryTree 
 {
     private:
-        struct TreeNode *root;
+        struct TreeNode<T> *root;
         int nodes;
-        struct TreeNode * minValue(struct TreeNode *);
-        struct TreeNode *removeRecursive(struct TreeNode *,int);
+        struct TreeNode<T> * minValue(struct TreeNode<T> *);
+        struct TreeNode<T> *removeRecursive(struct TreeNode<T> *,int);
     public:
         BinaryTree();
         ~BinaryTree();
-        void Insert(int);
-        bool search(int);
-        void preorder(struct TreeNode *);
+        void Insert(T);
+        bool search(T);
+        void preorder(struct TreeNode<T> *);
         void preorder();
         void nonrecursivepreorder();
-        void inorder(struct TreeNode *);
+        void inorder(struct TreeNode<T> *);
         void inorder();
         void nonrecursiveinorder();
-        void postorder(struct TreeNode *);
+        void postorder(struct TreeNode<T> *);
         void postorder();
         void nonrecursivepostorder();
         void LevelOrder();
-        void remove(int);
+        void remove(T);
         void destroy();
 };
 
