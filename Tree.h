@@ -1,12 +1,12 @@
 #ifndef BINARYTREE_H
 #define BINARYTREE_H
 
-
+template<class T>
 struct TreeNode
 {
     int data;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct TreeNode<T> *left;
+    struct TreeNode<T> *right;
 };
 
 class BinaryTree 
